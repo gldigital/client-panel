@@ -41,8 +41,7 @@ class Clients extends Component {
             <div className="col-md-6">
               <h5 className="text-right text-secondary">
                 Total Owed{' '}
-                <span className="text-primary"></span>
-                ${parseFloat(totalOwed).toFixed(2)}
+                <span className="text-primary">${parseFloat(totalOwed).toFixed(2)}</span>
               </h5>
             </div>
           </div>
@@ -57,7 +56,7 @@ class Clients extends Component {
             </thead>
             <tbody>
               {clients.map(client => (
-                <tr key={clients.id}>
+                <tr key={client.id}>
                   <td>{client.firstName} {client.lastName}</td>
                   <td>{client.email}</td>
                   <td>${parseFloat(client.balance).toFixed(2)}</td>
@@ -79,7 +78,7 @@ class Clients extends Component {
   }
 }
 
-Clients.PropTypes = {
+Clients.propTypes = {
   firestore: PropTypes.object.isRequired,
   clients: PropTypes.array
 }
